@@ -10,6 +10,10 @@ import ControllComponent from './demo/controllComponent';
 import UseRefDemo from './demo/UseRefDemo';
 import UncontrollComponent from './demo/UncontrollComponent';
 import ConditionalRendring from './demo/conditionalRendring';
+import BgChangeEvent from './demo/BgChangeEvent';
+import NewFormData from './demo/NewFormData';
+import IncDec from './demo/incDec';
+import ListRendering from './demo/ListRendering';
 
 
 
@@ -32,6 +36,10 @@ function App(){
    <UseRefDemo />
    <UncontrollComponent />
    <ConditionalRendring isloggedIin={false} />
+   <BgChangeEvent />
+   <IncDec />
+   <NewFormData />
+   <ListRendering />
     </>
   )
 
