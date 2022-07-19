@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 
  const IncDec = () => {
-    const [num , setNum]= useState("0")
+    const [num , setNum]= useState(0)
     const setInc = () =>{
         setNum(num + 1)
+        console.log(setNum)
     }
     const setDec = () =>{
         if (num > 0){
@@ -11,6 +12,7 @@ import React, { useState } from 'react'
         }
         else{
             setNum(0)
+            alert("number is smaller than 0")
         }
     }
   return (

@@ -5,41 +5,48 @@ export default function NewFormData() {
     fname: "",
     lname: "",
     email: "",
+    select: "",
   });
+  const [newFullName, setnewFullName] = useState({});
 
   const getFormData = (e) => {
     console.log(e);
     e.preventDefault();
-    alert("form submitted");
+    setnewFullName({
+      fname: fullname.fname,
+      lname: fullname.lname,
+      email: fullname.email,
+      select: fullname.select,
+    });
   };
   const inputEvent = (event) => {
     // const values = event.target.value;
     // const name = event.target.name;
     console.log("fullname=>", fullname);
-    const { value , name } = event.target;
+    const { value, name } = event.target;
     setFullName((preValue) => {
-        return{
-            ...preValue,
-            [name] : value,
-        };
+      return {
+        ...preValue,
+        [name]: value,
+      };
 
-    //   if (name === "fname") {
-    //     return {
-    //       fname: values,
-    //       lname: preValue.lname,
-    //     };
-    //   } else if (name === "lname") {
-    //     return {
-    //       lname: values,
-    //       fname: preValue.fname,
-    //     };
-    //   } else if (name === "email") {
-    //     return {
-    //       lname: preValue.lname,
-    //       email: values,
-    //       fname: preValue.fname,
-    //     };
-    //   }
+      //   if (name === "fname") {
+      //     return {
+      //       fname: values,
+      //       lname: preValue.lname,
+      //     };
+      //   } else if (name === "lname") {
+      //     return {
+      //       lname: values,
+      //       fname: preValue.fname,
+      //     };
+      //   } else if (name === "email") {
+      //     return {
+      //       lname: preValue.lname,
+      //       email: values,
+      //       fname: preValue.fname,
+      //     };
+      //   }
     });
   };
   return (
@@ -53,11 +60,16 @@ export default function NewFormData() {
     >
       <form onSubmit={(e) => getFormData(e)} style={{ padding: "30px" }}>
         <h1>new form data </h1>
+        <p>first name : {newFullName.fname}</p>
         <p>
-        <span>{fullname.fname}</span>
-        <span>{fullname.lname}</span>
+          <span> last name : {newFullName.lname}</span>
         </p>
-        
+        <p>
+          <span> email : {newFullName.email}</span>
+        </p>
+        <p>
+          <span> quantity : {newFullName.select}</span>
+        </p>
         <input
           type="text"
           placeholder="enter yor name"
@@ -87,7 +99,7 @@ export default function NewFormData() {
         />
         <br />
         <br />
-        <select>
+        <select name="select" value={fullname.select} onChange={inputEvent}>
           <option>1</option>
           <option>2</option>
           <option>3</option>

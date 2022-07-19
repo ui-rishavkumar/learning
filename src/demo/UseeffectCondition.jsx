@@ -4,7 +4,7 @@ export const UseeffectCondition = () => {
     const [count , setCount] = useState(0);
     const [data , setData] = useState (100);
     useEffect(()=>{
-        alert("count")
+        console.log("count")
     },[data])
   return (
     <div>

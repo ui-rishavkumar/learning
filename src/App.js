@@ -14,6 +14,12 @@ import BgChangeEvent from './demo/BgChangeEvent';
 import NewFormData from './demo/NewFormData';
 import IncDec from './demo/incDec';
 import ListRendering from './demo/ListRendering';
+import SimpleRouter from './demo/SimpleRouter';
+import LoginForm from './demo/LoginForm';
+import Lifecycle from './demo/ConstructorLifecycle';
+import Componentdidmount from './demo/Componentdidmount';
+import Componentdidupdate from './demo/Componentdidupdate';
+import ShouldUpdate from './demo/Shouldupdate';
 
 
 
@@ -21,16 +27,20 @@ import ListRendering from './demo/ListRendering';
 
  
 function App(){
-  function userData() {
-    alert("hello user")
-  }
+  // function userData() {
+  //   alert("hello user")
+  // }
   return (
     <>
+    <Lifecycle />
+    <SimpleRouter />
+    <LoginForm />
     <Hello />
    <Input />
    <HideandShow />
    <Form />
-   <User data={userData}/>
+   <User/>
+  
    <UseeffectCondition />
    <ControllComponent />
    <UseRefDemo />
@@ -39,6 +49,9 @@ function App(){
    <BgChangeEvent />
    <IncDec />
    <NewFormData />
+   <Componentdidmount />
+   <Componentdidupdate /> 
+   <ShouldUpdate />
    <ListRendering />
     </>
   )
